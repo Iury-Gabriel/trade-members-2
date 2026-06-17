@@ -3,7 +3,7 @@
 import { useEffect, useState, useCallback } from "react"
 import { useRouter } from "next/navigation"
 import { api } from "@/lib/api"
-import { Search, ChevronLeft, ChevronRight, ArrowLeft, Check, X, Unlock, UserPlus } from "lucide-react"
+import { Search, ChevronLeft, ChevronRight, ArrowLeft, Check, X, Unlock, UserPlus, Trash2 } from "lucide-react"
 
 type User = {
   id: string
@@ -80,6 +80,17 @@ export default function AdminUsersPage() {
     try {
       await api.admin.updateUser(user.id, { ja_registrado: true, ja_pagou: true })
       setUsers(prev => prev.map(u => u.id === user.id ? { ...u, ja_registrado: true, ja_pagou: true } : u))
+    } catch (err: any) {
+      alert(err.message)
+    }
+  }
+
+  const handleDelete = async (user: User) => {
+    if (!confirm(`Tem certeza que deseja apagar o usuário ${user.email}?`)) return
+    try {
+      await api.admin.deleteUser(user.id)
+      setUsers(prev => prev.filter(u => u.id !== user.id))
+      setPagination(prev => ({ ...prev, total: prev.total - 1 }))
     } catch (err: any) {
       alert(err.message)
     }
@@ -241,6 +252,13 @@ export default function AdminUsersPage() {
                         >
                           <Unlock className="size-3.5" />
                           {user.ja_registrado && user.ja_pagou ? "Liberado" : "Liberar Tudo"}
+                        </button>
+                        <button
+                          onClick={() => handleDelete(user)}
+                          className="inline-flex items-center gap-1.5 rounded-lg bg-red-500/20 px-3 py-1.5 text-xs font-semibold text-red-400 transition-colors hover:bg-red-500/30"
+                        >
+                          <Trash2 className="size-3.5" />
+                          Apagar
                         </button>
                       </td>
                       <td className="px-4 py-3 text-xs text-muted-foreground">

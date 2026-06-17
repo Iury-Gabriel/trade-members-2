@@ -9,6 +9,7 @@ router.get('/users', adminMiddleware, adminController.listUsers);
 router.post('/users', adminMiddleware, adminController.createUser);
 router.get('/users/export', adminMiddleware, adminController.exportCsv);
 router.patch('/users/:id', adminMiddleware, adminController.updateUser);
+router.delete('/users/:id', adminMiddleware, adminController.deleteUser);
 router.get('/webhooks', adminMiddleware, adminController.webhookLogs);
 router.get('/activity', adminMiddleware, adminController.activityLogs);
 router.post('/change-password', adminMiddleware, adminController.changePassword);

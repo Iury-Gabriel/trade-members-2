@@ -115,6 +115,8 @@ export const api = {
         method: 'POST',
         body: JSON.stringify({ email, ja_registrado, ja_pagou }),
       }),
+    deleteUser: (id: string) =>
+      adminRequest(`/admin/users/${id}`, { method: 'DELETE' }),
     changePassword: (currentPassword: string, newPassword: string) =>
       adminRequest('/admin/change-password', {
         method: 'POST',

@@ -364,4 +364,22 @@ const createUser = async (req, res) => {
   }
 };
 
-module.exports = { adminLogin, dashboard, listUsers, exportCsv, webhookLogs, activityLogs, updateUser, changePassword, createUser };
+const deleteUser = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const user = await prisma.user.findUnique({ where: { id } });
+    if (!user) {
+      return res.status(404).json({ success: false, message: 'Usuário não encontrado' });
+    }
+    if (user.is_admin) {
+      return res.status(403).json({ success: false, message: 'Não é possível apagar um administrador' });
+    }
+    await prisma.user.delete({ where: { id } });
+    return res.json({ success: true, message: 'Usuário apagado com sucesso' });
+  } catch (error) {
+    console.error('Erro ao apagar usuário:', error);
+    return res.status(500).json({ success: false, message: 'Erro interno' });
+  }
+};
+
+module.exports = { adminLogin, dashboard, listUsers, exportCsv, webhookLogs, activityLogs, updateUser, changePassword, createUser, deleteUser };
