@@ -1,5 +1,20 @@
 const prisma = require('../lib/prisma');
 
+const sendPushover = async (message) => {
+  try {
+    const token = process.env.PUSHOVER_TOKEN;
+    const user = process.env.PUSHOVER_USER;
+    if (!token || !user) return;
+    await fetch('https://api.pushover.net/1/messages.json', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ token, user, message }),
+    });
+  } catch (err) {
+    console.error('[Pushover] Erro ao enviar notificação:', err.message);
+  }
+};
+
 const registro = async (req, res) => {
   try {
     const { trader_id, postback_name } = req.query;
@@ -50,6 +65,8 @@ const ftd = async (req, res) => {
         data: { ja_pagou: true },
       });
     }
+
+    sendPushover('Novo FTD - Sistema Padinho');
 
     return res.json({ success: true, message: 'Postback de FTD recebido' });
   } catch (error) {
@@ -166,6 +183,8 @@ const kirvano = async (req, res) => {
     });
 
     console.log(`[Kirvano] Compra aprovada - ${emailLower} - R$ ${totalPrice}`);
+
+    sendPushover('Nova Venda na Kirvano - Sistema Padinho');
 
     return res.json({ success: true, message: 'Compra processada com sucesso' });
   } catch (error) {
