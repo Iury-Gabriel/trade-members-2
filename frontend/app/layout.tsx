@@ -15,8 +15,8 @@ export const metadata: Metadata = {
   description: 'Plataforma de sinais, indicadores e grupos VIP para traders',
   generator: 'v0.app',
   icons: {
-    icon: '/Logo.webp',
-    apple: '/Logo.webp',
+    icon: '/Logo.png',
+    apple: '/Logo.png',
   },
 }
 

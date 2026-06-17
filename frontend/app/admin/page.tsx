@@ -121,7 +121,7 @@ export default function AdminDashboard() {
       <header className="border-b border-border bg-card px-4 py-4 sm:px-8">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <img src="/Logo.webp" alt="Logo" className="h-10 w-auto" />
+            <img src="/Logo.png" alt="Logo" className="h-10 w-auto" />
             <h1 className="text-lg font-bold text-foreground">Painel Admin</h1>
           </div>
           <div className="flex flex-wrap items-center gap-2">

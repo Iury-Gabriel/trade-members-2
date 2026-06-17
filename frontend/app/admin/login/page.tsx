@@ -32,7 +32,7 @@ export default function AdminLoginPage() {
       <div className="w-full max-w-md">
         <div className="rounded-2xl border border-border bg-card p-8 shadow-2xl">
           <div className="mb-6 flex justify-center">
-            <img src="/Logo.webp" alt="Logo" className="h-16 w-auto" />
+            <img src="/Logo.png" alt="Logo" className="h-16 w-auto" />
           </div>
 
           <h1 className="mb-1 text-center text-xl font-bold text-foreground">Painel Administrativo</h1>

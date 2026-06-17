@@ -63,7 +63,7 @@ export function Sidebar({ onNavigate }: { onNavigate?: () => void }) {
     <aside className="flex h-full w-64 shrink-0 flex-col border-r border-sidebar-border bg-sidebar">
       <div className="flex h-20 items-center px-6">
         <Link href="/" aria-label="Início" onClick={handleClick}>
-          <img src="/Logo.webp" alt="Padinho Invest" className="h-10 w-auto" />
+          <img src="/Logo.png" alt="Padinho Invest" className="h-10 w-auto" />
         </Link>
       </div>
 
