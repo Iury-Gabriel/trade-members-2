@@ -6,6 +6,7 @@ const adminMiddleware = require('../middleware/adminMiddleware');
 router.post('/login', adminController.adminLogin);
 router.get('/dashboard', adminMiddleware, adminController.dashboard);
 router.get('/users', adminMiddleware, adminController.listUsers);
+router.post('/users', adminMiddleware, adminController.createUser);
 router.get('/users/export', adminMiddleware, adminController.exportCsv);
 router.patch('/users/:id', adminMiddleware, adminController.updateUser);
 router.get('/webhooks', adminMiddleware, adminController.webhookLogs);

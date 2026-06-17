@@ -334,4 +334,34 @@ const changePassword = async (req, res) => {
   }
 };
 
-module.exports = { adminLogin, dashboard, listUsers, exportCsv, webhookLogs, activityLogs, updateUser, changePassword };
+const createUser = async (req, res) => {
+  try {
+    const { email, ja_registrado, ja_pagou } = req.body;
+
+    if (!email) {
+      return res.status(400).json({ success: false, message: 'E-mail é obrigatório' });
+    }
+
+    const emailLower = email.toLowerCase().trim();
+
+    const existing = await prisma.user.findUnique({ where: { email: emailLower } });
+    if (existing) {
+      return res.status(409).json({ success: false, message: 'Este e-mail já está cadastrado' });
+    }
+
+    const user = await prisma.user.create({
+      data: {
+        email: emailLower,
+        ja_registrado: !!ja_registrado,
+        ja_pagou: !!ja_pagou,
+      },
+    });
+
+    return res.status(201).json({ success: true, user });
+  } catch (error) {
+    console.error('Erro ao criar usuário:', error);
+    return res.status(500).json({ success: false, message: 'Erro interno' });
+  }
+};
+
+module.exports = { adminLogin, dashboard, listUsers, exportCsv, webhookLogs, activityLogs, updateUser, changePassword, createUser };

@@ -110,6 +110,11 @@ export const api = {
       if (userId) params.set('user_id', userId);
       return adminRequest(`/admin/activity?${params}`);
     },
+    createUser: (email: string, ja_registrado?: boolean, ja_pagou?: boolean) =>
+      adminRequest('/admin/users', {
+        method: 'POST',
+        body: JSON.stringify({ email, ja_registrado, ja_pagou }),
+      }),
     changePassword: (currentPassword: string, newPassword: string) =>
       adminRequest('/admin/change-password', {
         method: 'POST',
