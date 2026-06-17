@@ -1,7 +1,7 @@
 async function request(endpoint: string, options: RequestInit = {}) {
   const token = typeof window !== 'undefined' ? localStorage.getItem('auth-token') : null;
 
-  const res = await fetch(`https://api.gabrielcampostrader.com.br/api${endpoint}`, {
+  const res = await fetch(`https://api.padinhoinvest.com.br/api${endpoint}`, {
     ...options,
     headers: {
       'Content-Type': 'application/json',
@@ -22,7 +22,7 @@ async function request(endpoint: string, options: RequestInit = {}) {
 async function adminRequest(endpoint: string, options: RequestInit = {}) {
   const token = typeof window !== 'undefined' ? localStorage.getItem('admin-token') : null;
 
-  const res = await fetch(`https://api.gabrielcampostrader.com.br/api${endpoint}`, {
+  const res = await fetch(`https://api.padinhoinvest.com.br/api${endpoint}`, {
     ...options,
     headers: {
       'Content-Type': 'application/json',
@@ -98,7 +98,7 @@ export const api = {
       }),
     exportCsvUrl: () => {
       const token = typeof window !== 'undefined' ? localStorage.getItem('admin-token') : null;
-      return `https://api.gabrielcampostrader.com.br/api/admin/users/export?token=${token}`;
+      return `https://api.padinhoinvest.com.br/api/admin/users/export?token=${token}`;
     },
     webhookLogs: (page = 1, type?: string) => {
       const params = new URLSearchParams({ page: String(page), limit: '50' });

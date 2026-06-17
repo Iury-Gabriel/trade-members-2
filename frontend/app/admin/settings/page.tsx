@@ -44,7 +44,7 @@ export default function AdminSettingsPage() {
   const handleExportCsv = () => {
     const token = localStorage.getItem("admin-token")
     if (token) {
-      window.open(`https://api.gabrielcampostrader.com.br/api/admin/users/export?token=${token}`, "_blank")
+      window.open(`https://api.padinhoinvest.com.br/api/admin/users/export?token=${token}`, "_blank")
     }
   }
 

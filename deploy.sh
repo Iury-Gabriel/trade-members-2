@@ -1,10 +1,10 @@
 #!/bin/bash
 set -e
 
-cd /trade-members
+cd /trade-members-2
 
 echo "========================================="
-echo "  Deploy SmartTrade - Mini Blue-Green"
+echo "  Deploy Padinho Invest - Mini Blue-Green"
 echo "========================================="
 echo ""
 
@@ -38,7 +38,7 @@ echo "Aguardando backend subir..."
 sleep 3
 
 for i in $(seq 1 10); do
-  if curl -sf http://localhost:3333/health > /dev/null 2>&1; then
+  if curl -sf http://localhost:3334/health > /dev/null 2>&1; then
     echo "OK - Backend online."
     break
   fi
@@ -61,7 +61,7 @@ echo "Aguardando frontend subir..."
 sleep 5
 
 for i in $(seq 1 10); do
-  if curl -sf http://localhost:3000 > /dev/null 2>&1; then
+  if curl -sf http://localhost:3001 > /dev/null 2>&1; then
     echo "OK - Frontend online."
     break
   fi

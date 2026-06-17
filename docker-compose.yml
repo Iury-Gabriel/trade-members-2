@@ -1,14 +1,14 @@
 services:
   postgres:
     image: postgres:16-alpine
-    container_name: trade_postgres
+    container_name: padinho_postgres
     restart: unless-stopped
     environment:
       POSTGRES_DB: ${POSTGRES_DB}
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - padinho_postgres_data:/var/lib/postgresql/data
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
       interval: 10s
@@ -19,13 +19,13 @@ services:
     build:
       context: ./backend
       dockerfile: Dockerfile
-    container_name: trade_backend
+    container_name: padinho_backend
     restart: unless-stopped
     ports:
-      - "3333:3333"
+      - "3334:3334"
     environment:
       NODE_ENV: production
-      PORT: 3333
+      PORT: 3334
       DATABASE_URL: postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB}?schema=public
       JWT_SECRET: ${JWT_SECRET}
     depends_on:
@@ -40,15 +40,15 @@ services:
     build:
       context: ./frontend
       dockerfile: Dockerfile
-    container_name: trade_frontend
+    container_name: padinho_frontend
     restart: unless-stopped
     ports:
-      - "3000:3000"
+      - "3001:3001"
     environment:
       NODE_ENV: production
-      PORT: 3000
+      PORT: 3001
     depends_on:
       - backend
 
 volumes:
-  postgres_data:
+  padinho_postgres_data:
