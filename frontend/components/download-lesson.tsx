@@ -27,7 +27,7 @@ export function DownloadLesson() {
           <span className="flex size-7 shrink-0 items-center justify-center rounded-full bg-primary/20 text-xs font-bold text-primary">
             1
           </span>
-          <h3 className="font-bold text-foreground">Baixar o Indicador SmartTrade IA</h3>
+          <h3 className="font-bold text-foreground">Baixar o Indicador WallStreet Revolution</h3>
         </div>
         <p className="text-sm leading-relaxed text-muted-foreground">
           Clique no botão abaixo para baixar o instalador do indicador. Após o download, execute o arquivo e siga as instruções.
@@ -40,7 +40,7 @@ export function DownloadLesson() {
             className="mt-5 flex w-full items-center justify-center gap-2 rounded-lg bg-primary px-5 py-3 text-sm font-bold uppercase tracking-wide text-primary-foreground transition-colors hover:bg-primary/90"
           >
             <Download className="size-4" />
-            Baixar Indicador SmartTrade IA
+            Baixar Indicador WallStreet Revolution
           </a>
         ) : (
           <button

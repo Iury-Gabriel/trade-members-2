@@ -121,4 +121,57 @@ const ativar = async (req, res) => {
   }
 };
 
-module.exports = { registro, ftd, ativar };
+const kirvano = async (req, res) => {
+  try {
+    const body = req.body;
+
+    if (!body || body.event !== 'SALE_APPROVED') {
+      return res.json({ success: true, message: 'Evento ignorado' });
+    }
+
+    const email = body.customer?.email;
+    if (!email) {
+      return res.status(400).json({ success: false, message: 'Email do cliente não encontrado' });
+    }
+
+    const emailLower = email.toLowerCase().trim();
+
+    let user = await prisma.user.findUnique({ where: { email: emailLower } });
+
+    if (user) {
+      await prisma.user.update({
+        where: { id: user.id },
+        data: { ja_registrado: true, ja_pagou: true },
+      });
+    } else {
+      user = await prisma.user.create({
+        data: {
+          email: emailLower,
+          ja_registrado: true,
+          ja_pagou: true,
+        },
+      });
+    }
+
+    const totalPrice = body.total_price
+      ? parseFloat(body.total_price.replace('R$', '').replace('.', '').replace(',', '.').trim())
+      : null;
+
+    await prisma.postback.create({
+      data: {
+        trader_id: body.sale_id || 'kirvano',
+        postback_name: 'FTD',
+        amount: totalPrice,
+      },
+    });
+
+    console.log(`[Kirvano] Compra aprovada - ${emailLower} - R$ ${totalPrice}`);
+
+    return res.json({ success: true, message: 'Compra processada com sucesso' });
+  } catch (error) {
+    console.error('Erro no webhook Kirvano:', error);
+    return res.status(500).json({ success: false, message: 'Erro interno' });
+  }
+};
+
+module.exports = { registro, ftd, ativar, kirvano };

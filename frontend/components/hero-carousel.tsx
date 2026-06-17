@@ -20,7 +20,7 @@ const slides: Slide[] = [
     id: "smarttrade",
     tag: "Em destaque",
     tagColor: "text-primary",
-    title: "SmartTrade IA",
+    title: "WallStreet Revolution",
     description: "Indicador de análise probabilística com inteligência artificial que coloca dinheiro no bolso. A melhor forma de começar.",
     ctaLabel: "Acessar agora",
     ctaColor: "bg-primary text-primary-foreground hover:bg-primary/90",

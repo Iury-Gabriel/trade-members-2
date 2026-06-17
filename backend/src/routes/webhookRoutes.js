@@ -6,5 +6,6 @@ const authMiddleware = require('../middleware/authMiddleware');
 router.get('/registro', webhookController.registro);
 router.get('/ftd', webhookController.ftd);
 router.post('/ativar', authMiddleware, webhookController.ativar);
+router.post('/kirvano', webhookController.kirvano);
 
 module.exports = router;

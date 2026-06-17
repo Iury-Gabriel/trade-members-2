@@ -10,7 +10,7 @@ export default function CoursePage() {
     <AppShell>
       <ProductHero
         backLabel="Voltar"
-        title="SmartTrade IA"
+        title="WallStreet Revolution"
         description="O melhor indicador de análise probabilística do mercado. Feito para colocar dinheiro no bolso de iniciantes de forma simples e assertiva. A porta de entrada ideal para quem busca consistência."
         cta={{ label: "Começar agora", href: `/smarttrade-pro/aula/${courseLessons[0].slug}` }}
         rightSlot={<WinCards />}
@@ -18,7 +18,7 @@ export default function CoursePage() {
 
       {/* Barra de progresso/topo do curso */}
       <div className="flex items-center justify-between border-b border-border px-6 py-4 lg:px-8">
-        <p className="font-semibold text-foreground">SmartTrade IA</p>
+        <p className="font-semibold text-foreground">WallStreet Revolution</p>
         <Link
           href={`/smarttrade-pro/aula/${courseLessons[0].slug}`}
           className="inline-flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"

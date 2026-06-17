@@ -133,7 +133,7 @@ export default function AdminUsersPage() {
                           onClick={() => handleToggle(user, "ja_registrado")}
                           className={`inline-flex size-7 items-center justify-center rounded-full transition-colors ${
                             user.ja_registrado
-                              ? "bg-green-500/20 text-green-400 hover:bg-green-500/30"
+                              ? "bg-blue-500/20 text-blue-400 hover:bg-blue-500/30"
                               : "bg-red-500/20 text-red-400 hover:bg-red-500/30"
                           }`}
                         >
@@ -145,7 +145,7 @@ export default function AdminUsersPage() {
                           onClick={() => handleToggle(user, "ja_pagou")}
                           className={`inline-flex size-7 items-center justify-center rounded-full transition-colors ${
                             user.ja_pagou
-                              ? "bg-green-500/20 text-green-400 hover:bg-green-500/30"
+                              ? "bg-blue-500/20 text-blue-400 hover:bg-blue-500/30"
                               : "bg-red-500/20 text-red-400 hover:bg-red-500/30"
                           }`}
                         >

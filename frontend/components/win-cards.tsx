@@ -12,7 +12,7 @@ export function WinCards() {
       {wins.map((w) => (
         <div
           key={w.pair}
-          className="flex items-center gap-3 rounded-xl border border-primary/40 bg-background/70 px-4 py-3 shadow-[0_0_25px_-8px_rgba(34,197,94,0.5)] backdrop-blur"
+          className="flex items-center gap-3 rounded-xl border border-primary/40 bg-background/70 px-4 py-3 shadow-[0_0_25px_-8px_rgba(0,102,255,0.5)] backdrop-blur"
         >
           <CheckCircle2 className="size-6 shrink-0 text-primary" />
           <div className="min-w-[150px]">

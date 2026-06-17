@@ -34,7 +34,7 @@ export default function LoginPage() {
         <div className="rounded-2xl border border-border bg-card p-8 shadow-2xl">
           {/* Logo */}
           <div className="mb-6 flex justify-center">
-            <img src="/Logo.webp" alt="Gabriel Campos Trader" className="h-20 w-auto" />
+            <img src="/Logo.webp" alt="Padinho Invest" className="h-20 w-auto" />
           </div>
 
           {/* Title */}

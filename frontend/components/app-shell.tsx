@@ -18,7 +18,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
           <button onClick={() => setSidebarOpen(true)} aria-label="Abrir menu">
             <Menu className="size-6 text-foreground" />
           </button>
-          <img src="/Logo.webp" alt="Gabriel Campos Trader" className="h-8 w-auto" />
+          <img src="/Logo.webp" alt="Padinho Invest" className="h-8 w-auto" />
         </div>
 
         {/* Overlay */}

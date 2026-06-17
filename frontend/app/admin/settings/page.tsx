@@ -113,7 +113,7 @@ export default function AdminSettingsPage() {
             </div>
 
             {message && (
-              <p className={`rounded-lg px-3 py-2 text-sm ${message.type === "success" ? "bg-green-500/10 text-green-400" : "bg-destructive/10 text-destructive"}`}>
+              <p className={`rounded-lg px-3 py-2 text-sm ${message.type === "success" ? "bg-blue-500/10 text-blue-400" : "bg-destructive/10 text-destructive"}`}>
                 {message.text}
               </p>
             )}

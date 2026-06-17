@@ -194,7 +194,7 @@ export default function AdminDashboard() {
                 <div className="flex items-center gap-1 text-xs text-red-400">
                   <ArrowDown className="size-3" /> {stats.funnel.dropCadastroAtivacao}% drop-off
                 </div>
-                <FunnelStep label="Ativaram licença" value={stats.funnel.ativaram} width={stats.funnel.cadastros > 0 ? `${Math.max((stats.funnel.ativaram / stats.funnel.cadastros) * 100, 8)}%` : "8%"} color="bg-green-500" />
+                <FunnelStep label="Ativaram licença" value={stats.funnel.ativaram} width={stats.funnel.cadastros > 0 ? `${Math.max((stats.funnel.ativaram / stats.funnel.cadastros) * 100, 8)}%` : "8%"} color="bg-blue-500" />
                 <div className="flex items-center gap-1 text-xs text-red-400">
                   <ArrowDown className="size-3" /> {stats.funnel.dropAtivacaoFtd}% drop-off
                 </div>
@@ -204,8 +204,8 @@ export default function AdminDashboard() {
 
             {/* Financial Cards */}
             <div className="mb-8 grid grid-cols-2 gap-4 lg:grid-cols-4">
-              <Card icon={<DollarSign className="size-5" />} label="Receita Bruta" value={`R$ ${stats.receitaBruta.toFixed(2)}`} color="text-green-400" subtitle={`${stats.usersWithFtd} FTDs`} />
-              <Card icon={<TrendingUp className="size-5" />} label="Comissão (70%)" value={`R$ ${stats.receitaLiquida.toFixed(2)}`} color="text-emerald-400" subtitle="Sua receita líquida" />
+              <Card icon={<DollarSign className="size-5" />} label="Receita Bruta" value={`R$ ${stats.receitaBruta.toFixed(2)}`} color="text-blue-400" subtitle={`${stats.usersWithFtd} FTDs`} />
+              <Card icon={<TrendingUp className="size-5" />} label="Comissão (70%)" value={`R$ ${stats.receitaLiquida.toFixed(2)}`} color="text-sky-400" subtitle="Sua receita líquida" />
               <Card icon={<DollarSign className="size-5" />} label="Ticket Médio" value={`R$ ${stats.usersWithFtd > 0 ? (stats.receitaLiquida / stats.usersWithFtd).toFixed(2) : '0.00'}`} color="text-cyan-400" subtitle="Comissão por FTD" />
               <Card icon={<BarChart3 className="size-5" />} label="LTV Estimado" value={`R$ ${stats.totalUsers > 0 ? (stats.receitaLiquida / stats.totalUsers).toFixed(2) : '0.00'}`} color="text-purple-400" subtitle="Receita por cadastro" />
             </div>
@@ -213,7 +213,7 @@ export default function AdminDashboard() {
             {/* Metric Cards */}
             <div className="mb-8 grid grid-cols-2 gap-4 lg:grid-cols-3">
               <Card icon={<Users className="size-5" />} label="Cadastros" value={stats.totalUsers} color="text-blue-400" />
-              <Card icon={<UserCheck className="size-5" />} label="Licenças ativas" value={stats.usersWithTraderId} color="text-green-400" />
+              <Card icon={<UserCheck className="size-5" />} label="Licenças ativas" value={stats.usersWithTraderId} color="text-blue-400" />
               <Card icon={<DollarSign className="size-5" />} label="FTDs" value={stats.usersWithFtd} color="text-yellow-400" />
               <Card icon={<ArrowRightLeft className="size-5" />} label="Conv. Registro" value={`${stats.convRegistro}%`} color="text-purple-400" subtitle={`${stats.usersWithTraderId} de ${stats.totalUsers}`} />
               <Card icon={<TrendingUp className="size-5" />} label="Conv. FTD / Ativados" value={`${stats.convFtd}%`} color="text-orange-400" subtitle={`${stats.usersWithFtd} de ${stats.usersWithTraderId}`} />
@@ -223,7 +223,7 @@ export default function AdminDashboard() {
             {/* Postbacks */}
             <div className="mb-8 grid grid-cols-2 gap-4 lg:grid-cols-3">
               <Card icon={<BarChart3 className="size-5" />} label="Total Postbacks" value={stats.totalPostbacks} color="text-cyan-400" />
-              <Card icon={<UserCheck className="size-5" />} label="Postbacks Registro" value={stats.registroPostbacks} color="text-emerald-400" />
+              <Card icon={<UserCheck className="size-5" />} label="Postbacks Registro" value={stats.registroPostbacks} color="text-sky-400" />
               <Card icon={<DollarSign className="size-5" />} label="Postbacks FTD" value={stats.ftdPostbacks} color="text-amber-400" />
             </div>
 

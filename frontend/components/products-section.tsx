@@ -22,14 +22,14 @@ const products: Product[] = [
   {
     id: "smarttrade",
     href: "/smarttrade-pro",
-    badge: "Ative o SmartTrade",
+    badge: "Ative o WallStreet",
     badgeClass: "bg-primary text-primary-foreground",
-    title: "SmartTrade IA",
+    title: "WallStreet Revolution",
     status: "Exclusivo",
     statusIcon: "crown",
     statusClass: "text-primary",
     image: "/ARTES/1.png",
-    cardGlow: "shadow-[0_0_40px_-12px_rgba(34,197,94,0.35)]",
+    cardGlow: "shadow-[0_0_40px_-12px_rgba(0,102,255,0.35)]",
   },
   {
     id: "suporte",
@@ -41,7 +41,7 @@ const products: Product[] = [
     statusIcon: "message",
     statusClass: "text-primary",
     image: "/ARTES/2.png",
-    cardGlow: "shadow-[0_0_40px_-12px_rgba(34,197,94,0.35)]",
+    cardGlow: "shadow-[0_0_40px_-12px_rgba(0,102,255,0.35)]",
   },
   {
     id: "grupo",
@@ -53,7 +53,7 @@ const products: Product[] = [
     statusIcon: "gift",
     statusClass: "text-primary",
     image: "/ARTES/GRUPO DO WHATS.png",
-    cardGlow: "shadow-[0_0_40px_-12px_rgba(34,197,94,0.35)]",
+    cardGlow: "shadow-[0_0_40px_-12px_rgba(0,102,255,0.35)]",
     external: true,
   },
   {
