@@ -57,7 +57,7 @@ export function InstallLesson() {
           <strong className="text-foreground">ID da conta</strong> — você vai precisar no próximo passo.
         </p>
         <a
-          href="https://trade.casatrade.com/register?aff=819571&aff_model=revenue&afftrack=areademembros"
+          href="https://trade.casatrade.com/register?aff=825295&aff_model=revenue&afftrack=areamembros"
           target="_blank"
           rel="noopener noreferrer"
           className="mt-5 flex w-full items-center justify-center gap-2 rounded-lg bg-primary px-5 py-3 text-sm font-bold uppercase tracking-wide text-primary-foreground transition-colors hover:bg-primary/90"

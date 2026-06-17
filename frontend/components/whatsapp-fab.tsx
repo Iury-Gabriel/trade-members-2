@@ -3,7 +3,7 @@
 export function WhatsAppFab() {
   return (
     <a
-      href="https://api.whatsapp.com/send/?phone=5513978207673&text=Estou+com+uma+d%C3%BAvida&type=phone_number&app_absent=0"
+      href="https://wa.me/5519996294615?text=Estou%20com%20uma%20duvida..."
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Suporte WhatsApp"

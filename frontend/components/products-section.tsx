@@ -45,7 +45,7 @@ const products: Product[] = [
   },
   {
     id: "grupo",
-    href: "https://chat.whatsapp.com/LHEnoCcbWWdGCDkN5XQ5IF?mode=gi_t",
+    href: "https://chat.whatsapp.com/DhEatM6158AJSgFR0R9e4V",
     badge: "Entre no grupo",
     badgeClass: "bg-primary text-primary-foreground",
     title: "Grupo WhatsApp",

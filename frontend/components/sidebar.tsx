@@ -36,15 +36,15 @@ const navGroups: { section: string; items: NavItem[] }[] = [
     items: [
       { label: "WallStreet Revolution", icon: PlayCircle, href: "/smarttrade-pro" },
       { label: "Suporte WhatsApp", icon: Phone, href: "/suporte-whatsapp" },
-      { label: "Grupo WhatsApp", icon: Users, href: "https://chat.whatsapp.com/LHEnoCcbWWdGCDkN5XQ5IF?mode=gi_t", external: true },
+      { label: "Grupo WhatsApp", icon: Users, href: "https://chat.whatsapp.com/DhEatM6158AJSgFR0R9e4V", external: true },
       { label: "Inteligência Artificial", icon: Crown, href: "/inteligencia-artificial" },
     ],
   },
   {
     section: "Recursos",
     items: [
-      { label: "Abrir conta na CasaTrade", icon: Building2, href: "https://trade.casatrade.com/register?aff=819571&aff_model=revenue&afftrack=areademembros", highlight: true, external: true },
-      { label: "Suporte", icon: MessageCircle, href: "https://api.whatsapp.com/send/?phone=5513978207673&text=Estou+com+uma+d%C3%BAvida&type=phone_number&app_absent=0", external: true },
+      { label: "Abrir conta na CasaTrade", icon: Building2, href: "https://trade.casatrade.com/register?aff=825295&aff_model=revenue&afftrack=areamembros", highlight: true, external: true },
+      { label: "Suporte", icon: MessageCircle, href: "https://wa.me/5519996294615?text=Estou%20com%20uma%20duvida...", external: true },
     ],
   },
   {

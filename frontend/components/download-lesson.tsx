@@ -34,7 +34,7 @@ export function DownloadLesson() {
         </p>
         {canDownload ? (
           <a
-            href="https://api.whatsapp.com/send/?phone=5513978207673&text=A+Palavra+Chave+é+SMARTACESSO&type=phone_number&app_absent=0"
+            href="https://wa.me/5519996294615?text=Estou%20com%20uma%20duvida..."
             target="_blank"
             rel="noopener noreferrer"
             className="mt-5 flex w-full items-center justify-center gap-2 rounded-lg bg-primary px-5 py-3 text-sm font-bold uppercase tracking-wide text-primary-foreground transition-colors hover:bg-primary/90"

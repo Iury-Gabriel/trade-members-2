@@ -24,7 +24,7 @@ export default function SuporteWhatsappPage() {
             Clique no botão abaixo para abrir uma conversa direta com nosso suporte no WhatsApp. Responderemos o mais rápido possível.
           </p>
           <a
-            href="https://api.whatsapp.com/send/?phone=5513978207673&text=Estou+com+uma+d%C3%BAvida&type=phone_number&app_absent=0"
+            href="https://wa.me/5519996294615?text=Estou%20com%20uma%20duvida..."
             target="_blank"
             rel="noopener noreferrer"
             className="mt-6 inline-flex items-center gap-2 rounded-lg bg-[#25D366] px-8 py-3 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-[#20bd5a]"
