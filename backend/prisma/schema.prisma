@@ -1,0 +1,46 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id             String       @id @default(uuid())
+  email          String       @unique
+  password       String?
+  telefone       String?
+  trader_id      String?      @unique
+  is_admin       Boolean      @default(false)
+  ja_registrado  Boolean      @default(false)
+  ja_pagou       Boolean      @default(false)
+  last_login     DateTime?    @map("last_login")
+  login_count    Int          @default(0) @map("login_count")
+  criado_em      DateTime     @default(now()) @map("criado_em")
+  atualizado_em  DateTime     @updatedAt @map("atualizado_em")
+  lessonViews    LessonView[]
+
+  @@map("usuarios")
+}
+
+model Postback {
+  id             String   @id @default(uuid())
+  trader_id      String
+  postback_name  String
+  amount         Float?
+  criado_em      DateTime @default(now()) @map("criado_em")
+
+  @@map("postbacks")
+}
+
+model LessonView {
+  id        String   @id @default(uuid())
+  user_id   String
+  slug      String
+  user      User     @relation(fields: [user_id], references: [id], onDelete: Cascade)
+  viewed_at DateTime @default(now()) @map("viewed_at")
+
+  @@map("lesson_views")
+}
